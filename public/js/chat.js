@@ -50,7 +50,6 @@ socket.on('newMessage', function (message) {
         text: message.text,
         createdAt: foramtedDate
     })
-
     
     $('#messages').append(html);
     scrollToBottom();
@@ -76,7 +75,6 @@ messageForm.on('submit', function (e) {
     var input = $('[name=message]');
 
     socket.emit('createMessage', {
-        from: 'User',
         text: input.val()
     }, function () {
         input.val('');
