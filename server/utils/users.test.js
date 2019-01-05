@@ -76,4 +76,18 @@ describe('Users', () => {
 
         expect(resUsers).toEqual(['Artem1']);
     })
+
+    it('should retun false for non uniq user', () => {
+        var userName = 'Artem1';
+        var res = users.isUserUniq(userName);
+
+        expect(res).toBe(false);
+    });
+
+    it('should retun true for uniq user', () => {
+        var userName = 'Artem3';
+        var res = users.isUserUniq(userName);
+
+        expect(res).toBe(true);
+    });
 });

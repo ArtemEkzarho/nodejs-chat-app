@@ -29,6 +29,12 @@ class Users {
 
         return namesArray;
     }
+
+    isUserUniq(name) {
+        var user = this.users.filter(user => user.name === name)[0];
+
+        return !user;
+    }
 }
 
 module.exports = {Users};
